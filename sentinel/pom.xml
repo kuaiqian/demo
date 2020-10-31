@@ -17,10 +17,10 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>spring-boot-starter-ahas-sentinel-client</artifactId>
-            <version>1.6.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.csp</groupId>-->
+<!--            <artifactId>spring-boot-starter-ahas-sentinel-client</artifactId>-->
+<!--            <version>1.6.6</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>sentinel</module>
+        <module>web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -71,6 +72,14 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.0-jre</version>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

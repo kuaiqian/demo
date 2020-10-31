@@ -1,11 +1,7 @@
 package com.duobaoyu.controller;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author chengchen
@@ -16,9 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class TestController {
 
-    @GetMapping("/hello")
+    @GetMapping("/hello/{name}")
     @ResponseBody
-    public String hello(String name) {
+    public String hello(@PathVariable(name = "name") String name) {
         return "hello," + name;
+    }
+
+    @GetMapping("/goodBye/{name}")
+    @ResponseBody
+    public String goodBye(@PathVariable(name = "name") String name) {
+        return "goodBye," + name;
     }
 }
