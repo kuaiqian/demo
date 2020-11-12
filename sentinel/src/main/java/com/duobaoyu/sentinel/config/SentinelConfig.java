@@ -1,4 +1,4 @@
-package com.duobaoyu.config;
+package com.duobaoyu.sentinel.config;
 
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.RequestOriginParser;
 import org.springframework.beans.factory.InitializingBean;

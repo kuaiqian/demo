@@ -1,7 +1,7 @@
-package com.duobaoyu.argumentResolver;
+package com.duobaoyu.web.argumentResolver;
 
-import com.duobaoyu.annotation.Auth;
-import com.duobaoyu.model.AuthData;
+import com.duobaoyu.web.annotation.Auth;
+import com.duobaoyu.web.model.AuthData;
 import com.google.common.collect.Lists;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;

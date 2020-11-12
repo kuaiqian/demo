@@ -1,4 +1,4 @@
-package com.duobaoyu.controller;
+package com.duobaoyu.sentinel.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

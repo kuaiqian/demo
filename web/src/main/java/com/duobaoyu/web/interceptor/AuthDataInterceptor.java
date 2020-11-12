@@ -1,15 +1,11 @@
-package com.duobaoyu.interceptor;
+package com.duobaoyu.web.interceptor;
 
-import com.duobaoyu.annotation.Auth;
-import org.springframework.core.MethodParameter;
-import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.web.method.HandlerMethod;
+import com.duobaoyu.web.annotation.Auth;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
 
 /**
  * @author FS001338

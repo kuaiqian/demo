@@ -1,6 +1,6 @@
-package com.duobaoyu.model;
+package com.duobaoyu.web.model;
 
-import com.duobaoyu.annotation.Auth;
+import com.duobaoyu.web.annotation.Auth;
 import lombok.Data;
 
 /**

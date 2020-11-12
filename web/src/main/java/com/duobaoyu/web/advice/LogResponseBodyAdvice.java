@@ -1,6 +1,5 @@
-package com.duobaoyu.advice;
+package com.duobaoyu.web.advice;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

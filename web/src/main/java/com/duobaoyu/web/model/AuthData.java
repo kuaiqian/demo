@@ -1,4 +1,4 @@
-package com.duobaoyu.model;
+package com.duobaoyu.web.model;
 
 import lombok.Data;
 

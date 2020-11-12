@@ -1,4 +1,4 @@
-package com.duobaoyu.annotation;
+package com.duobaoyu.web.annotation;
 
 import java.lang.annotation.*;
 
