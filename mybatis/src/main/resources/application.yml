@@ -12,6 +12,17 @@ spring:
     username: root
     password: test
 
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://rm-bp14sr08246v31f788o.mysql.rds.aliyuncs.com:3306/res_customer?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+#    username: res_customer
+#    password: id893977jk
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.duobaoyu.mybatis.entity
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: debug
