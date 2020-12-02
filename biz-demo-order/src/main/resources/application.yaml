@@ -1,0 +1,43 @@
+server:
+  port: 10002
+
+#***************** mysql begin**************
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/order
+    username: root
+    password: 123456
+  #    type: com.alibaba.druid.pool.DruidDataSource
+  #***************** mysql end*******************
+  profiles:
+    active: order
+
+  application:
+    name: order
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.duobaoyu.mybatis.entity
+
+logging:
+  level:
+    org:
+      apache:
+        ibatis: debug
+
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+  txServiceGroup: my_test_tx_group
+
+  txc:
+    txcAppName: order-gts
+    txServiceGroup: txc_test_public.1129361738553704.QD
+    servcieEndPoint: https://test-cs-gts.aliyuncs.com

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author FS001338
@@ -22,9 +23,13 @@ public class TestController {
     @Resource
     private UserMapper userMapper;
 
+    @Resource
+    private Map<String, User> applicationList;
+
     @GetMapping("/selectAll")
     @ResponseBody
     public List<User> selectAllUser() {
+        System.out.println(applicationList);
         return userMapper.selectAll();
     }
 }

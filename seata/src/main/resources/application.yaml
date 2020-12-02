@@ -1,0 +1,55 @@
+server:
+  port: 8082
+
+#***************** mysql begin**************
+spring:
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://localhost:13306/storage
+  #    username: root
+  #    password: 123456
+  #    type: com.alibaba.druid.pool.DruidDataSource
+  #***************** mysql end*******************
+
+  application:
+    name: seata
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.duobaoyu.mybatis.entity
+
+logging:
+  level:
+    org:
+      apache:
+        ibatis: debug
+        httpcomponents: debug
+
+#开启seata全局事务
+seata:
+#  enabled: true
+  #  registry:
+  #    type: nacos
+  #    nacos:
+  #      application: seata-server
+  #      server-addr: 127.0.0.1:8848
+  #      group : "SEATA_GROUP"
+  #      namespace: ""
+  #      username: "nacos"
+  #      password: "nacos"
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+
+  txServiceGroup: my_test_tx_group
+  enable-auto-data-source-proxy: false
+
+#  GTS接入，客户端jar存在问题，applicationContext未设置就实例化GLobalTransactionScanner
+#  txc:
+#    txcAppName: seata-gts
+#    txServiceGroup: txc_test_public.1129361738553704.QD
+#    servcieEndPoint: https://test-cs-gts.aliyuncs.com

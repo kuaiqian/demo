@@ -1,0 +1,39 @@
+
+server:
+  port: 8081
+  tomcat:
+    maxConnections: 1
+
+#************H2  Begin****************
+#spring:
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    schema: classpath:db/schema-h2.sql
+#    data: classpath:db/data-h2.sql
+#    url: jdbc:h2:mem:test
+#    username: root
+#    password: test
+#    type: com.alibaba.druid.pool.DruidDataSource
+#***************H2 end **************
+
+
+#***************** mysql begin**************
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/storage
+    username: chengchen
+    password: 123456
+#    type: com.alibaba.druid.pool.DruidDataSource
+#***************** mysql end*******************
+  profiles:
+    active: mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.duobaoyu.mybatis.entity
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: debug
