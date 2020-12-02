@@ -27,15 +27,15 @@ logging:
 #开启seata全局事务
 seata:
 #  enabled: true
-  #  registry:
-  #    type: nacos
-  #    nacos:
-  #      application: seata-server
-  #      server-addr: 127.0.0.1:8848
-  #      group : "SEATA_GROUP"
-  #      namespace: ""
-  #      username: "nacos"
-  #      password: "nacos"
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group : "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
   config:
     type: nacos
     nacos:
