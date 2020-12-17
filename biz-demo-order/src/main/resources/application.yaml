@@ -37,7 +37,7 @@ seata:
       password: "nacos"
   txServiceGroup: my_test_tx_group
 
-  txc:
-    txcAppName: order-gts
-    txServiceGroup: txc_test_public.1129361738553704.QD
-    servcieEndPoint: https://test-cs-gts.aliyuncs.com
+#  txc:
+#    txcAppName: order-gts
+#    txServiceGroup: txc_test_public.1129361738553704.QD
+#    servcieEndPoint: https://test-cs-gts.aliyuncs.com

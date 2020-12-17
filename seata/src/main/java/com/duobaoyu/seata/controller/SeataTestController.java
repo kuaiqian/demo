@@ -14,8 +14,15 @@ public class SeataTestController {
     @Autowired
     private BusinessService businessService;
 
+    @RequestMapping("/testAT")
+    public void testAT(){
+        businessService.purchase("1234","1",2);
+    }
+
     @RequestMapping("/testTcc")
     public void testTcc(){
         businessService.purchaseTcc("1234","1",2);
     }
+
+
 }

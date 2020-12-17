@@ -23,6 +23,12 @@ public class BusinessServiceImpl implements BusinessService {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private StorageTccActionService storageTccActionService;
+
+    @Autowired
+    private OrderTccActionService orderTccActionService;
+
     @Override
     @GlobalTransactional(name="purchase")
     public void purchase(String userId, String commodityCode, Integer orderCount) {
@@ -35,13 +41,11 @@ public class BusinessServiceImpl implements BusinessService {
 //        throw new RuntimeException();
     }
 
-    @Autowired
-    private StorageTccActionService storageTccActionService;
-
     @Override
     @GlobalTransactional(name="purchaseTcc")
     public void purchaseTcc(String userId, String commodityCode, Integer count) {
         storageTccActionService.deduct(commodityCode, count);
+        orderTccActionService.create(userId,commodityCode,count);
 //        throw new RuntimeException("一阶段失败");
     }
 }

@@ -26,6 +26,15 @@ logging:
         ibatis: debug
 
 seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+
   config:
     type: nacos
     nacos:
@@ -41,7 +50,7 @@ seata:
   enableAutoDataSourceProxy: false
 
  #GTS配置
-  txc:
-    txcAppName: storage-gts
-    txServiceGroup: txc_test_public.1129361738553704.QD
-    servcieEndPoint: https://test-cs-gts.aliyuncs.com
+#  txc:
+#    txcAppName: storage-gts
+#    txServiceGroup: txc_test_public.1129361738553704.QD
+#    servcieEndPoint: https://test-cs-gts.aliyuncs.com
