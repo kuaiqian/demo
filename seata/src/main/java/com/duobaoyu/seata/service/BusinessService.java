@@ -8,8 +8,7 @@ package com.duobaoyu.seata.service;
  */
 public interface BusinessService {
 
-    void purchase(String userId, String commodityCode, Integer count);
+    void purchase(String userId, String commodityCode, Integer count, boolean rollback);
 
-
-    void purchaseTcc(String userId, String commodityCode, Integer count);
+    void purchaseTcc(String userId, String commodityCode, Integer count, boolean rollback);
 }

@@ -47,7 +47,7 @@ seata:
   txServiceGroup: my_test_tx_group
 
   #关闭数据源代理
-  enableAutoDataSourceProxy: false
+#  enableAutoDataSourceProxy: false
 
  #GTS配置
 #  txc:

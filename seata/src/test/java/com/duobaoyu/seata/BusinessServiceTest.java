@@ -19,14 +19,11 @@ public class BusinessServiceTest {
 
     @Test
     public void purchase() {
-        businessService.purchase("1234", "1", 3);
+        businessService.purchase("1234", "1", 3, false);
     }
-
 
     @Test
     public void purchaseTcc() {
-        businessService.purchaseTcc("1234", "1", 3);
+        businessService.purchaseTcc("1234", "1", 3, false);
     }
 }
-
-

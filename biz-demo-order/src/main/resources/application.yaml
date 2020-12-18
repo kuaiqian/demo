@@ -27,6 +27,15 @@ logging:
         ibatis: debug
 
 seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+
   config:
     type: nacos
     nacos:
@@ -36,6 +45,9 @@ seata:
       username: "nacos"
       password: "nacos"
   txServiceGroup: my_test_tx_group
+
+  #关闭数据源代理
+#  enableAutoDataSourceProxy: false
 
 #  txc:
 #    txcAppName: order-gts
