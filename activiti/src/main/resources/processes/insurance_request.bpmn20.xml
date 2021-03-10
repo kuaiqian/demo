@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="insuranceRequest" name="insurance request" isExecutable="true">
+    <startEvent id="startEvent1"></startEvent>
+    <serviceTask id="hebao" name="核保" activiti:class="com.duobaoyu.activiti.service.HebaoService"></serviceTask>
+    <sequenceFlow id="sid-C3137A2B-1489-4598-9056-CD1307C8A355" sourceRef="startEvent1" targetRef="hebao">
+    </sequenceFlow>
+    <exclusiveGateway id="payAmount" name="pay amount enough？"></exclusiveGateway>
+    <sequenceFlow id="sid-657FD6AD-1CEA-4DB6-A976-74301F34439F" sourceRef="hebao" targetRef="payAmount">
+    </sequenceFlow>
+    <serviceTask id="confirmPay" name="确认支付" activiti:expression="#{PaySerivce.confirmPay(execution)}" activiti:resultVariable="result"></serviceTask>
+    <serviceTask id="cancelPay" name="取消支付" activiti:expression="#{PaySerivce.cancelPay(amount)}" activiti:resultVariable="result"></serviceTask>
+    <sequenceFlow id="sid-0F52B88D-86E1-4FAE-B6B0-5FD0A44DBFCF" sourceRef="payAmount" targetRef="confirmPay">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${amount > 10 && 'A001'.equals(order.productCode)}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="sid-7ED9C151-7CEC-4EB5-AF33-FADB9E27433B" sourceRef="payAmount" targetRef="cancelPay">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${amount <= 10 && 'B001'.equals(order.productCode)}]]></conditionExpression>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_insuranceRequest">
+    <bpmndi:BPMNPlane bpmnElement="insuranceRequest" id="BPMNPlane_insuranceRequest">
+      <bpmndi:BPMNShape bpmnElement="startEvent1" id="BPMNShape_startEvent1">
+        <omgdc:Bounds height="30.0" width="30.0" x="100.0" y="163.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="hebao" id="BPMNShape_hebao">
+        <omgdc:Bounds height="80.0" width="100.0" x="225.0" y="138.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="payAmount" id="BPMNShape_payAmount">
+        <omgdc:Bounds height="40.0" width="40.0" x="370.0" y="158.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="confirmPay" id="BPMNShape_confirmPay">
+        <omgdc:Bounds height="80.0" width="100.0" x="573.5" y="79.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="cancelPay" id="BPMNShape_cancelPay">
+        <omgdc:Bounds height="80.0" width="100.0" x="573.5" y="267.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-C3137A2B-1489-4598-9056-CD1307C8A355" id="BPMNEdge_sid-C3137A2B-1489-4598-9056-CD1307C8A355">
+        <omgdi:waypoint x="130.0" y="178.0"></omgdi:waypoint>
+        <omgdi:waypoint x="225.0" y="178.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-657FD6AD-1CEA-4DB6-A976-74301F34439F" id="BPMNEdge_sid-657FD6AD-1CEA-4DB6-A976-74301F34439F">
+        <omgdi:waypoint x="325.0" y="178.2164502164502"></omgdi:waypoint>
+        <omgdi:waypoint x="370.4130434782609" y="178.41304347826087"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-0F52B88D-86E1-4FAE-B6B0-5FD0A44DBFCF" id="BPMNEdge_sid-0F52B88D-86E1-4FAE-B6B0-5FD0A44DBFCF">
+        <omgdi:waypoint x="390.5" y="158.5"></omgdi:waypoint>
+        <omgdi:waypoint x="390.5" y="119.0"></omgdi:waypoint>
+        <omgdi:waypoint x="573.5" y="119.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-7ED9C151-7CEC-4EB5-AF33-FADB9E27433B" id="BPMNEdge_sid-7ED9C151-7CEC-4EB5-AF33-FADB9E27433B">
+        <omgdi:waypoint x="390.5" y="197.5"></omgdi:waypoint>
+        <omgdi:waypoint x="390.5" y="307.0"></omgdi:waypoint>
+        <omgdi:waypoint x="573.5" y="307.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -6,7 +6,8 @@
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:13306/account"
                         userId="chengchen" password="123456"/>
-
+        
+        <plugin type="WdMysqlClientGeneratorPlugin"></plugin>
         <javaModelGenerator targetPackage="com.duobaoyu.mybatis.entity" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>

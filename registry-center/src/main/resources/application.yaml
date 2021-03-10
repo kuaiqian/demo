@@ -1,0 +1,11 @@
+server:
+  port: 8092
+
+#***************** mysql begin**************
+spring:
+  application:
+    name: registry-center
+
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848

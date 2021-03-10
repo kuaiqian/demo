@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:13306/storage
-    username: root
+    username: chengchen
     password: 123456
   #    type: com.alibaba.druid.pool.DruidDataSource
   #***************** mysql end*******************
@@ -21,9 +21,7 @@ mybatis:
 
 logging:
   level:
-    org:
-      apache:
-        ibatis: debug
+    com.duobaoyu.mybatis: debug
 
 seata:
   registry:
@@ -54,3 +52,7 @@ seata:
 #    txcAppName: storage-gts
 #    txServiceGroup: txc_test_public.1129361738553704.QD
 #    servcieEndPoint: https://test-cs-gts.aliyuncs.com
+
+dby:
+  tenant:
+    tables: storage_tbl,account_tbl

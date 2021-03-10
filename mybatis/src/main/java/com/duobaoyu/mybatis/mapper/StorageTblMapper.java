@@ -47,4 +47,6 @@ public interface StorageTblMapper {
     int updateByPrimaryKey(StorageTbl record);
 
     int deduct(@Param("commodityCode") String commodityCode, @Param("num") Integer count);
+
+    List<StorageTbl> selectBySubQuery();
 }
