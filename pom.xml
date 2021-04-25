@@ -15,6 +15,9 @@
         <module>marshall-unmarshall</module>
         <module>activiti</module>
         <module>registry-center</module>
+        <module>spring-cloud-demo-client</module>
+        <module>java-script-demo</module>
+        <module>spring-cloud-demo-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

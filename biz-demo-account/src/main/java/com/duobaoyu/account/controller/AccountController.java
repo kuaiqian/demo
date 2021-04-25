@@ -1,9 +1,11 @@
 package com.duobaoyu.account.controller;
 
-import com.duobaoyu.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.duobaoyu.account.service.AccountService;
 
 /**
  * @author FS001338

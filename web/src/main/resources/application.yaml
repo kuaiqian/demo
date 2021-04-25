@@ -1,0 +1,22 @@
+server:
+  port: 8093
+
+#***************** mysql begin**************
+spring:
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://localhost:13306/storage
+  #    username: root
+  #    password: 123456
+  #    type: com.alibaba.druid.pool.DruidDataSource
+  #***************** mysql end*******************
+
+  application:
+    name: web-test
+
+logging:
+  level:
+    org:
+      apache:
+        ibatis: debug
+        httpcomponents: debug
