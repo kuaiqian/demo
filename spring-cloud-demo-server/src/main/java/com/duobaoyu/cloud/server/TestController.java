@@ -22,6 +22,7 @@ public class TestController {
 
     @GetMapping("/getHello")
     public String getHello(String hi,Integer sleepTime){
+        System.out.println("getHello："+hi);
         try {
             TimeUnit.SECONDS.sleep(sleepTime);
         } catch (InterruptedException e) {

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author FS001338
  * @date 2021/4/21
  */
-@FeignClient(value = "demo-a2", fallback = DefaultFallBack.class)
+@FeignClient(value = "demo-a2")
 public interface DemoFeign {
 
     @PostMapping("/test/sayHi")

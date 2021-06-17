@@ -26,12 +26,12 @@
             <version>1.0.20</version>
         </dependency>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>com.duobaoyu.middleware</groupId>
             <artifactId>multiTenant</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+-->
     </dependencies>
 
     <build>
