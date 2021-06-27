@@ -26,7 +26,9 @@ public class TestController {
 
     @GetMapping(value = "/getHello")
     public String getHello(String hi, Integer sleepTime) {
+        System.out.printf("====>hi:%s,sleepTime:%s \n",hi,sleepTime);
         String result = demoFeign.getHello(hi, sleepTime);
+        System.out.println("===========>"+result);
         return result;
     }
 }

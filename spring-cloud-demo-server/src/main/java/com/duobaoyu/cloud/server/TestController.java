@@ -28,6 +28,7 @@ public class TestController {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("==========>"+hi);
         return "demo2:"+hi;
     }
 }
