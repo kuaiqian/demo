@@ -24,11 +24,16 @@ public class ObserableCreateDemo {
     public static void main(String[] args) throws IOException {
         // create_demo();
 //        just_demo();
-         empty_never_error_demo();
+//         empty_never_error_demo();
         // from_demo();
         // interval_demo();
 //        range_demo();
 //        timer_demo();
+        single_demo();
+    }
+
+    private static void single_demo() {
+        Observable.just(1,2).single(2).subscribe();
     }
 
     private static void timer_demo() throws IOException {

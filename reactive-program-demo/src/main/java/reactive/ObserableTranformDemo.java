@@ -26,10 +26,58 @@ public class ObserableTranformDemo {
         // groupby_demo(students);
         // map_demo(students);
         // scan_demo();
-        // on_error_demo();
+//        on_error_return_demo();
+//        on_error_resume_next();
+//        on_exception_resume_next();
+        retry_demo();
     }
 
-    private static void on_error_demo() {
+    private static void retry_demo() {
+        Observable<Object> observable = Observable.create(s -> {
+            for (int i = 0; i < 10; i++) {
+                if (i == 7) {
+//                    throw new Error("error");
+                    throw new RuntimeException("my exception");
+                }
+                s.onNext(Integer.valueOf(i));
+            }
+        }).retry();
+//        observable.retry();
+//        observable.retry(1,e->{return true;});
+        subscribe(observable);
+        mainHanUp();
+    }
+
+    private static void on_exception_resume_next() {
+        Observable<Integer> take = Observable.interval(1, TimeUnit.SECONDS).take(2).map(s-> Integer.valueOf(s.toString()));
+        Observable<Object> observable = Observable.create(s -> {
+            for (int i = 0; i < 10; i++) {
+                if (i == 7) {
+//                    throw new Error("error");
+                    throw new RuntimeException("my exception");
+                }
+                s.onNext(Integer.valueOf(i));
+            }
+        }).onExceptionResumeNext(take);
+        subscribe(observable);
+        mainHanUp();
+    }
+
+    private static void on_error_resume_next() {
+        Observable<Integer> take = Observable.interval(1, TimeUnit.SECONDS).take(2).map(s-> Integer.valueOf(s.toString()));
+        Observable<Object> observable = Observable.create(s -> {
+            for (int i = 0; i < 10; i++) {
+                if (i == 7) {
+                    throw new Error("error");
+                }
+                s.onNext(Integer.valueOf(i));
+            }
+        }).onErrorResumeNext(throwable -> {return take;});
+        subscribe(observable);
+        mainHanUp();
+    }
+
+    private static void on_error_return_demo() {
         Observable<Object> observable = Observable.create(s -> {
             for (int i = 0; i < 10; i++) {
                 if (i == 7) {
@@ -37,7 +85,7 @@ public class ObserableTranformDemo {
                 }
                 s.onNext(i);
             }
-        });
+        }).onErrorReturn(e->e.getMessage());
         subscribe(observable);
     }
 
