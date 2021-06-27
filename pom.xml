@@ -18,6 +18,7 @@
         <module>spring-cloud-demo-client</module>
         <module>java-script-demo</module>
         <module>spring-cloud-demo-server</module>
+        <module>reactive-program-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
