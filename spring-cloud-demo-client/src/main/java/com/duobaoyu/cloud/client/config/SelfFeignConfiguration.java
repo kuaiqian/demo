@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SelfFeignConfiguration {
-
-    @Bean
-    public LZoneFilter lZoneFilter(IClientConfig config) {
-        LZoneFilter lZoneFilter = new LZoneFilter();
-        lZoneFilter.initWithNiwsConfig(config);
-        return lZoneFilter;
-    }
+//
+//    @Bean
+//    public LZoneFilter lZoneFilter(IClientConfig config) {
+//        LZoneFilter lZoneFilter = new LZoneFilter();
+//        lZoneFilter.initWithNiwsConfig(config);
+//        return lZoneFilter;
+//    }
 }
